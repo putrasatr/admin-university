@@ -1,5 +1,5 @@
 import { Interface } from "readline";
-import { garis } from "../constants";
+import { garis } from "constants/index";
 // import jurusanMenu from "./jurusan/index.js";
 import mahasiswaMenu from "./mahasiswa";
 // import dosenMenu from "./dosen/index.js";

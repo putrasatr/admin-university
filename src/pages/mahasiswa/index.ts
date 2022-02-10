@@ -8,7 +8,7 @@ import { findMahasiswa } from "./list";
 export default function mahasiswaMenu(rl: Interface) {
   const mahasiswa = new MahasiswaTable();
   menuView("Mahasiswa");
-  rl.question("masukan salah satu no. dari opsi diatas:", (mhs) => {
+  rl.question("masukan salah satu no. dari opsi diatas: ", (mhs) => {
     switch (mhs) {
       case "1":
         mahasiswa.list(() => {
@@ -22,9 +22,9 @@ export default function mahasiswaMenu(rl: Interface) {
         tambahMahasiswa(rl, mahasiswa, () => mahasiswaMenu(rl));
         break;
       case "4":
-        hapusMurid(rl, mahasiswa, (res: Boolean, id: string) => {
+        hapusMurid(rl, mahasiswa, (isSuccess: Boolean, id: string) => {
           console.log("\n");
-          if (res) {
+          if (isSuccess) {
             console.log(
               `Mahasiswa dengan ID Mahasiswa : ${id} berhasil di hapus.`
             );

@@ -1,6 +1,6 @@
 import { Interface } from "readline";
-import { garis } from "../../constants";
-import Mahasiswa from "../../services/control/mahasiswa";
+import { garis } from "constants/index";
+import Mahasiswa from "services/control/mahasiswa";
 
 export function tambahMahasiswa(
   rl: Interface,
