@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "baseUrl": "src",
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
@@ -8,5 +9,6 @@
     "allowJs": true,
     "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./db/**/*", "./src/**/*", "./*"]
+  "include": ["./db/**/*", "./src/**/*", "./*"],
+  "exclude": ["./node_modules"]
 }
