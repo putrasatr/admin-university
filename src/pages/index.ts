@@ -1,7 +1,7 @@
 import { garis, greetingSentence } from "../constants";
 import { Interface } from "readline";
 import UsersTable from "services/control";
-import mainMenu from "./mainMenu";
+import mainMenu from "./main-menu";
 import { ProfileProps } from "../interfaces";
 
 const users = new UsersTable();
