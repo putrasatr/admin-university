@@ -1,6 +1,6 @@
 import { Interface } from "readline";
 import { garis } from "../../constants";
-// import jurusanMenu from "./jurusan/index.js";
+import jurusanMenu from "../jurusan";
 import mahasiswaMenu from "../mahasiswa";
 import dosenMenu from "../dosen";
 // import mataKuliahMenu from "./mataKuliah/index.js";
@@ -20,9 +20,9 @@ ${garis}`);
       case "1":
         mahasiswaMenu(rl);
         break;
-      // case "2":
-      //   jurusanMenu(rl);
-      //   break;
+      case "2":
+        jurusanMenu(rl);
+        break;
       case "3":
         dosenMenu(rl);
         break;
