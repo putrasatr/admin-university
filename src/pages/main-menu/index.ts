@@ -3,8 +3,9 @@ import { garis } from "../../constants";
 import jurusanMenu from "../jurusan";
 import mahasiswaMenu from "../mahasiswa";
 import dosenMenu from "../dosen";
-// import mataKuliahMenu from "./mataKuliah/index.js";
+import mataKuliahMenu from "../mataKuliah";
 import kontrakMenu from "../kontrak";
+import mainLogin from "../../pages";
 
 export default function mainMenu(rl: Interface) {
   console.log(`Silahkan pilih opsi dibawah ini
@@ -26,15 +27,15 @@ ${garis}`);
       case "3":
         dosenMenu(rl);
         break;
-      // case "4":
-      //   mataKuliahMenu(rl);
-      //   break;
+      case "4":
+        mataKuliahMenu(rl);
+        break;
       case "5":
         kontrakMenu(rl);
         break;
-      // case "6":
-      //   mainLogin(rl);
-      //   break;
+      case "6":
+        mainLogin(rl);
+        break;
 
       default:
         console.log("\nMasukan nomor yang sesuai!!\n");
