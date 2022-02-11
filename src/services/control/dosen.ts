@@ -1,5 +1,5 @@
-import { pool, Select, Where, Insert, Delete } from "../../config/index.js";
-import { handleError, getTable } from "../../helpers/index.js";
+import { pool, Select, Where, Insert, Delete } from "../../config";
+import { handleError, getTable } from "../../helpers";
 
 export default class Dosen {
   list(callback: Function) {

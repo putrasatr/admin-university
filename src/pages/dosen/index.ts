@@ -1,6 +1,6 @@
 import { Interface } from "readline";
-import { menuView } from "../../constants/index.js";
-import DosenTable from "../../services/control/dosen.js";
+import { menuView } from "../../constants";
+import DosenTable from "../../services/control/dosen";
 import mainMenu from "../main-menu";
 import { hapusDosen, tambahDosen } from "./form";
 import { findDosen } from "./list";

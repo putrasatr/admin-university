@@ -1,7 +1,7 @@
 import { Interface } from "readline";
 import { menuView } from "../../constants";
 import MahasiswaTable from "../../services/control/mahasiswa";
-import mainMenu from "../mainMenu";
+import mainMenu from "../main-menu";
 import { hapusMurid, tambahMahasiswa } from "./form";
 import { findMahasiswa } from "./list";
 
