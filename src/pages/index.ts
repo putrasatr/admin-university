@@ -7,7 +7,7 @@ import { ProfileProps } from "../interfaces";
 const users = new UsersTable();
 
 export default function mainLogin(rl: Interface) {
-  console.log(`FF
+  console.log(`
   ${greetingSentence}
   ${garis}`);
   askUsername(rl);
