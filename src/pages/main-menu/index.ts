@@ -1,4 +1,4 @@
-import { Interface } from "readline";
+import { rl } from "../../services/readline";
 import { garis } from "../../constants";
 import jurusanMenu from "../jurusan";
 import mahasiswaMenu from "../mahasiswa";
@@ -7,7 +7,7 @@ import mataKuliahMenu from "../mataKuliah";
 import kontrakMenu from "../kontrak";
 import mainLogin from "../../pages";
 
-export default function mainMenu(rl: Interface) {
+export default function mainMenu() {
   console.log(`Silahkan pilih opsi dibawah ini
 [1] Mahasiswa
 [2] Jurusan
@@ -19,27 +19,27 @@ ${garis}`);
   rl.question("Masukan salah satu no. dari opsi diatas:", (Masukan) => {
     switch (Masukan.trim().toLowerCase()) {
       case "1":
-        mahasiswaMenu(rl);
+        mahasiswaMenu();
         break;
       case "2":
-        jurusanMenu(rl);
+        jurusanMenu();
         break;
       case "3":
-        dosenMenu(rl);
+        dosenMenu();
         break;
       case "4":
-        mataKuliahMenu(rl);
+        mataKuliahMenu();
         break;
       case "5":
-        kontrakMenu(rl);
+        kontrakMenu();
         break;
       case "6":
-        mainLogin(rl);
+        mainLogin();
         break;
 
       default:
         console.log("\nMasukan nomor yang sesuai!!\n");
-        mainMenu(rl);
+        mainMenu();
         break;
     }
   });

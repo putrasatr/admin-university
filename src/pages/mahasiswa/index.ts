@@ -4,22 +4,23 @@ import MahasiswaTable from "../../services/control/mahasiswa";
 import mainMenu from "../main-menu";
 import { hapusMurid, tambahMahasiswa } from "./form";
 import { findMahasiswa } from "./list";
+import { rl } from "../../services/readline";
 
-export default function mahasiswaMenu(rl: Interface) {
+export default function mahasiswaMenu() {
   const mahasiswa = new MahasiswaTable();
   menuView("Mahasiswa");
   rl.question("masukan salah satu no. dari opsi diatas: ", (mhs) => {
     switch (mhs) {
       case "1":
         mahasiswa.list(() => {
-          mahasiswaMenu(rl);
+          mahasiswaMenu();
         });
         break;
       case "2":
-        findMahasiswa(rl, mahasiswa, () => mahasiswaMenu(rl));
+        findMahasiswa(rl, mahasiswa, () => mahasiswaMenu());
         break;
       case "3":
-        tambahMahasiswa(rl, mahasiswa, () => mahasiswaMenu(rl));
+        tambahMahasiswa(rl, mahasiswa, () => mahasiswaMenu());
         break;
       case "4":
         hapusMurid(rl, mahasiswa, (isSuccess: Boolean, id: string) => {
@@ -33,15 +34,15 @@ export default function mahasiswaMenu(rl: Interface) {
               `Mahasiswa dengan ID Mahasiswa : ${id} tidak terdaftar`
             );
           }
-          mahasiswaMenu(rl);
+          mahasiswaMenu();
         });
         break;
       case "5":
-        mainMenu(rl);
+        mainMenu();
         break;
       default:
         console.log("\nMasukan nomor yang sesuai!!\n");
-        mahasiswaMenu(rl);
+        mahasiswaMenu();
         break;
     }
   });

@@ -1,43 +1,43 @@
-import { Interface } from "readline";
 import { menuView } from "../../constants";
 import DosenTable from "../../services/control/dosen";
+import { rl } from "../../services/readline";
 import mainMenu from "../main-menu";
 import { hapusDosen, tambahDosen } from "./form";
 import { findDosen } from "./list";
 
-export default function dosenMenu(rl: Interface) {
+export default function dosenMenu() {
   const dosen = new DosenTable();
   menuView("Dosen");
   rl.question("masukan salah satu no. dari opsi diatas:", (input) => {
     switch (input.trim()) {
       case "1":
         dosen.list(() => {
-          dosenMenu(rl);
+          dosenMenu();
         });
         break;
       case "2":
-        findDosen(rl, dosen, () => dosenMenu(rl));
+        findDosen(dosen, () => dosenMenu());
         break;
       case "3":
-        tambahDosen(rl, dosen, () => dosenMenu(rl));
+        tambahDosen(dosen, () => dosenMenu());
         break;
       case "4":
-        hapusDosen(rl, dosen, (res: Boolean, id: number) => {
+        hapusDosen(dosen, (res: Boolean, id: number) => {
           console.log("\n");
           if (res) {
             console.log(`Dosen dengan ID Dosen : ${id} berhasil di hapus.`);
           } else {
             console.log(`Dosen dengan ID Dosen : ${id} tidak terdaftar`);
           }
-          dosenMenu(rl);
+          dosenMenu();
         });
         break;
       case "5":
-        mainMenu(rl);
+        mainMenu();
         break;
       default:
         console.log("\nMasukan nomor yang sesuai!!\n");
-        dosenMenu(rl);
+        dosenMenu();
         break;
     }
   });

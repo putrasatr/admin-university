@@ -1,28 +1,28 @@
-import { Interface } from "readline";
 import { menuView } from "../../constants";
 import MataKuliahTable from "../../services/control/mataKuliah";
+import { rl } from "../../services/readline";
 import mainMenu from "../main-menu";
 import { hapusMataKuliah, tambahMataKuliah } from "./form";
 import { findMataKuliah } from "./list";
 
-export default function matakuliahMenu(rl: Interface) {
+export default function matakuliahMenu() {
   const matakuliah = new MataKuliahTable();
   menuView("Mata Kuliah");
   rl.question("masukan salah satu no. dari opsi diatas:", (input) => {
     switch (input.trim()) {
       case "1":
         matakuliah.list(() => {
-          matakuliahMenu(rl);
+          matakuliahMenu();
         });
         break;
       case "2":
-        findMataKuliah(rl, matakuliah, () => matakuliahMenu(rl));
+        findMataKuliah(matakuliah, () => matakuliahMenu());
         break;
       case "3":
-        tambahMataKuliah(rl, matakuliah, () => matakuliahMenu(rl));
+        tambahMataKuliah(matakuliah, () => matakuliahMenu());
         break;
       case "4":
-        hapusMataKuliah(rl, matakuliah, (res: boolean, id: string) => {
+        hapusMataKuliah(matakuliah, (res: boolean, id: string) => {
           console.log("\n");
           if (res) {
             console.log(
@@ -33,15 +33,15 @@ export default function matakuliahMenu(rl: Interface) {
               `Mata Kuliah dengan ID Mata Kuliah : ${id} tidak terdaftar`
             );
           }
-          matakuliahMenu(rl);
+          matakuliahMenu();
         });
         break;
       case "5":
-        mainMenu(rl);
+        mainMenu();
         break;
       default:
         console.log("\nMasukan nomor yang sesuai!!\n");
-        matakuliahMenu(rl);
+        matakuliahMenu();
         break;
     }
   });
