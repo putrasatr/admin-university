@@ -17,13 +17,13 @@ export default function mahasiswaMenu() {
         });
         break;
       case "2":
-        findMahasiswa(rl, mahasiswa, () => mahasiswaMenu());
+        findMahasiswa(mahasiswa, () => mahasiswaMenu());
         break;
       case "3":
-        tambahMahasiswa(rl, mahasiswa, () => mahasiswaMenu());
+        tambahMahasiswa(mahasiswa, () => mahasiswaMenu());
         break;
       case "4":
-        hapusMurid(rl, mahasiswa, (isSuccess: Boolean, id: string) => {
+        hapusMurid(mahasiswa, (isSuccess: Boolean, id: string) => {
           console.log("\n");
           if (isSuccess) {
             console.log(
