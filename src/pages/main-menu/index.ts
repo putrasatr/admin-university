@@ -36,7 +36,6 @@ ${garis}`);
       case "6":
         mainLogin();
         break;
-
       default:
         console.log("\nMasukan nomor yang sesuai!!\n");
         mainMenu();
